@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    
+ 
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Admin Dashboard Panel</title> 
+</head>
+<body>
+    
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="/Admin Dashboard Panel/Admin Dashboard Panel/images/logo.jpg" alt="">
+            </div>
+
+            <span class="logo_name">Benx Soln</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="/Admin Dashboard Panel/Admin Dashboard Panel/index.html">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
+                <li><a href="index.html">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="link-name">Students</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-file-edit-alt"></i>
+                    <span class="link-name">Exam</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    
+    
+    
+    <section class="dashboard">
+        
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>       
+        </div>
+        <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+          </div >
+        <div class="container2" >
+            
+            <div class="tabs">
+              <h3 class="active" onclick="showForm('studentForm')">Add Students</h3>
+              <h3 onclick="showForm('teacherForm')">Upload CSV</h3>
+            </div>
+              <div class="tab-content">
+              <div class="active">
+                <h3>Give the Range</h3>
+                <br>
+                  <form id="studentForm" action="student_process.php" method="post" onsubmit="return validateStudentForm()">
+                      <label for="sregisterNumber">Start Register Number:</label>
+                      <input type="text" id="sregisterNumber" name="sregisterNumber" required pattern="[0-9]{8}" title="Enter 8-digit numeric register number">
+                      <br>
+                      <br>
+                      <label for="eregisterNumber">End Register Number:</label>
+                      <input type="text" id="eregisterNumber" name="eregisterNumber" required pattern="[0-9]{8}" title="Enter 8-digit numeric register number">
+                      
+                      
+                      <!-- Add more fields as needed -->
+              
+                      <input type="submit" value="Add Students">
+                  </form>
+              </div>
+              </div>
+      
+              <div class="tab-content">
+                <div class="drag-area">
+                    <div class="icons">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <header>Drag & Drop to Upload File</header>
+                        <button onclick="browseFile()">Browse File</button>
+                        <input type="file" id="fileInput" hidden onchange="handleFile()">
+                        <p>Note! : The CSV file must contain column "Regno".</p>
+                  </div>
+                  
+                
+                  
+              
+              </div>
+      
+          </div>
+    
+    
+    
+    
+      </div>
+
+      
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
